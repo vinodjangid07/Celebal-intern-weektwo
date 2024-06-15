@@ -1,6 +1,7 @@
 # Todo List App 📝
 
 ## Preview 👁️
+![preview of todoapp](https://github.com/vinodjangid07/Celebal-intern-weektwo/assets/86096184/7c9a5ccd-5bd6-4b63-b4a5-9fb0d43ecdbb)
 
 
 ## Overview 🌟
