@@ -1,38 +1,295 @@
-.App {
-  text-align: center;
+/* src/components/TodoList.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*::selection {
+  background-color: gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*::-moz-selection {
+  background: gray;
 }
 
-.App-header {
-  background-color: #282c34;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+:root{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  cursor:default;
+  --bg-color:#0d0e09;
+  --secondary-color: #0c8efc;
+  --add-color: #0c8efc;
+  --save--undo-complete: #6693db;
+  --delete-cancel--color: #ff5c5c;
+  --edit--color:#ffca7f;
+  --task--color: #282828;
+}
+
+
+body{
+  width: 100%;
   min-height: 100vh;
+  padding-top: 150px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+.logo_container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 20px;
+}
+.logo_container img{
+  width: 50px;
+}
+h1{
+  font-size: 3.5rem;
+  color: white;
+  color: var(--secondary-color);
+}
+.todo-list-container {
+  width: 55vw;
+  height: fit-content;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px;
+  gap: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.056);
+  margin-bottom: 100px;
+  border-radius: 20px;
+}
+
+.add-task-container {
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+.add-task-container input{
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 5px;
+  width: 70%;
+  height: 55px;
+}
+
+.add-task-btn {
+ width: 30%;
+ height: 55px;
+ border-radius: 5px;
+ background-color: var(--add-color);
+ border: none;
+ color: white;
+ cursor: pointer;
+ 
+}
+.add-task-btn:hover {
+  background-color: #59b1fe;
+}
+
+.filter-container {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.filter-container select {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+
+.task-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  width: 100%;
+ background-color: var(--task--color);
+ list-style: none;
+ display: flex;
+ align-items: flex-start;
+ padding: 10px;
+ border-radius: 5px;
+
+}
+
+ul{
+  padding: 0;
+}
+.view-task {
+  width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.edit-task {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.edit-task input{
+  height: 40px;
+  width: calc(100% - 80px);
+  padding-left: 10px;
+}
+
+.task-text {
+  width: calc(100% - 120px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: white;
+  font-size: 1.8rem;
+  padding-left: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  height: fit-content;
+}
+.completed {
+  text-decoration: line-through;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.todoButtons{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  gap: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.todoButtons svg path{
+  fill: white;
+}
+.edit-save-btn svg path{
+  fill:none;
+  stroke: white;
+}
+.remove-task-btn, .edit-cancel-btn{
+  background-color: var(--delete-cancel--color);
+}
+.edit-start-btn{
+  background-color: var(--edit--color);
+}
+.complete-toggle-btn, .edit-save-btn{
+  background-color: var(--save--undo-complete);
+}
+
+@media screen and (max-width:1920px) {
+  html {
+      font-size: 60%;
   }
 }
+
+@media screen and (max-width:1300px) {
+  html {
+      font-size: 60%;
+  }
+  .todo-list-container {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width:998px) {
+  html {
+      font-size: 55%;
+  }
+  body{
+    padding-top: 50px;
+  }
+  .todo-list-container {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width:768px) {
+  html {
+      font-size: 50%;
+  }
+
+}
+
+@media screen and (max-width:500px) {
+  html {
+      font-size: 45%;  
+  }
+  .view-task{
+    align-tracks: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .task-text{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttons_container{
+    width: 100%;
+    justify-content: center;
+  }
+  .edit-task{
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width:430px) {
+  html {
+      font-size: 43%;
+  }
+  .add-task-container{
+    flex-direction: column;
+  }
+  .add-task-container input,.add-task-container button{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:375px) {
+  html {
+      font-size: 40%;
+  }
+}
+@media screen and (max-width:300px) {
+  html {
+      font-size: 40%;
+  }
+}
+
+/* responsive code above */
